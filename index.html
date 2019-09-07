@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>JAIYEOBA OLORUNFEMI CV</title>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-<script src="./femi.js"></script>
+
+<script src="femi.js"></script>
 <link rel="stylesheet" href="./olorunfemi.css">
         <div <img class="logo">
         <img src="https://res.cloudinary.com/phemyjay/image/upload/v1566595141/femi_j_bhmh9b.jpg" alt="femi" width="130" height="130" align="left">
@@ -82,27 +82,30 @@
     <footer>
 
         <h1>CONTACT ME</h1>
-    <form action="https://formspree.io/olorunfemi.jaiyeoba@yahoo.com" method="POST"/>"
+    <form name = "forms" action="https://formspree.io/olorunfemi.jaiyeoba@yahoo.com" method=" POST" onsubmit=" return validateform()">
         <label>
-            Name
-            <input type="name" name="name" class='Name'/>
+        Name
+            <input type="text" name='name' >
         </label>
+      
         <label>
 E-mail
-<input type="email" name='email' class="email"/>
+<input type="text" name= "email" >
         </label>
         <label>
             Title 
-            <input type="text" name='title'class="Title"/>
+            <input type="text" name="title">
         </label>
+       
         <label>
             Message
-            <textarea class="message" Name="message"> </textarea> </textarea>
+            <textarea input type = "text" name="message"> </textarea>
         </label>
+      
         <label>
             <div class="status">
 </div>
-            <button type="submit" class="submit"> send </button>
+            <button type="submit" name="submit"> send </button>
         </label>
     </form>
     </footer>

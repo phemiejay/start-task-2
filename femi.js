@@ -1,33 +1,46 @@
-$ (document).ready(function(){
-    $('.submit').click(function (event){
-        event.preventdefault()
-        console.log('clicked button')
+function validateform() {
+    var name = document.forms.name.value;
+    var x = document.forms.email.value;
+    var atposition = x.indexOf("@");
+    var dotposition = x.lastIndexOf(".");
+    var title = document.forms.title.value;
+    var message = document.forms.message.value;
 
-var Name = $('.name').val ()
-        var email = $('.email').val()
-        var Title = $('.Title').val()
-        var Message = $('.Message').val()
-var statusElm = $('.status')
-statusElm.empty()
 
-if (email.length >5 && email.includes ('@') && email.includes('.')){
-    statusElm.append('<div>email is valid</div>')
-} else {
-    event.preventdefault()
-    statusElm.append('<div>email is not valid</div>');
+    if (name == null || name == "")
+    {
+        alert("Name is empty");
+        return false;
+    }
+    else if(name.length < 4)
+{
+    alert ("Name has to have at least 4 characters");
+    return false;
 }
 
-if (Name.length >= 4) {
-    statusElm.append('<div> Name is valid</div>') 
-} else{
-    event.preventdefault()
-   statusElm.append('<div> Name is not valid</div>');
+ if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.lenght) 
+ {
+     alert ("Email is not valid");
+     return false;
+ }
+
+ if  (title == null || title == "")
+{
+    alert("Title field is empty");
+    return false;
 }
-if (Message.length >= 20){
-    statusElm.append('<div>message is ok</div>')
-} else {
-    event.preventdefault()
-    statusElm.append('<div>message is too long</div>');
+
+if (message == null || message == "")
+{
+    alert ("Message feild is empty");
+    return false;
 }
-    })
-})
+else if(message.length < 20)
+{
+    alert ("Message is invalid Please enter at least 20 characters");
+    return false;
+}
+
+
+
+}
